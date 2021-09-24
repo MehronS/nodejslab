@@ -1,5 +1,6 @@
 const pwdScript = require(`./pwd.js`);
 const lsScript = require(`./ls`);
+const catScript = require(`./cat`);
 
 process.stdout.write(`prompt > `);
 
