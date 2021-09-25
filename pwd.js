@@ -1,8 +1,5 @@
-function pwdFunc() {
-  process.stdout.write(`\n${process.cwd()}`);
-  process.stdout.write(`\nprompt > `);
+function pwdFunc(done) {
+  done(`\n${process.cwd()}`);
 }
 
-module.exports = {
-  pwd: pwdFunc,
-};
+module.exports = pwdFunc;

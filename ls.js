@@ -1,16 +1,25 @@
 const fs = require("fs");
 
-function lsFunc() {
+// let done = bash.done;
+
+function lsFunc(done) {
   fs.readdir(`./`, `utf8`, (err, files) => {
     if (err) {
       throw err;
     } else {
-      process.stdout.write(files.join(` `));
-      process.stdout.write(`\nprompt > ` );
+      done(files.join(` `));
     }
   });
 }
 
-module.exports = {
-  ls: lsFunc,
-};
+module.exports = lsFunc;
+
+// module.exports = (done) => {
+//   fs.readdir(`./`, `utf8`, (err, files) => {
+//     if (err) {
+//       done(`Something went wrong`);
+//     } else {
+//       done(files.join(`   `));
+//     }
+//   });
+// };

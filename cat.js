@@ -1,11 +1,10 @@
-const fs = require('fs')
-function catFunc(fullPath) {
+const fs = require("fs");
+
+function catFunc(fullPath, done) {
   const fileName = fullPath[0];
-  fs.readFile(fileName, 'utf8', (err, data) => {
+  fs.readFile(fileName, "utf8", (err, data) => {
     if (err) throw err;
-    console.log(data);
-    process.stdout.write(`\nprompt > `);
-    //done(data);
+    done(data);
   });
 }
 
